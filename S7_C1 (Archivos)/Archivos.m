@@ -9,7 +9,7 @@ fclose(arch_w);                             %   Se CIERRA el manejador
 
 %%   Lectura de archivos
 
-arch_r = fopen('thousand.bin', 'r');
+arch_r = fopen('arch.bin', 'r');
 buffer_r = fread(arch_r, 'int8');
 fclose(arch_r);
 
