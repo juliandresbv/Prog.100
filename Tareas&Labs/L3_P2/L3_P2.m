@@ -1,18 +1,34 @@
+%%  Carga Lista.mat
+
+load('Lista.mat');
+
+%%  Generar HealthProfiles
+
+edades = zeros(1, length(data));
+%   vector de edades de los pacientes.
+
 for i = 2:length(data)
-    current_pacient = data(i,:);
+    current_patient = data(i,:);
+    %   Se recupera el paciente i-esimo de la matriz data.
     
-    nombre = current_pacient(1);
-    apellido = current_pacient(2);
-    genero = current_pacient(3);
+    nombre = string( current_patient(1) );
+    apellido = string( current_patient(2) );
+    genero = string( current_patient(3) );
     
-    fecha_nacimiento = zeros(1,3);
-    fecha_nacimeinto(1) = current_pacient(4);
-    fecha_nacimeinto(2) = current_pacient(5);
-    fecha_nacimeinto(3) = current_pacient(6);
+    fecha_nacimiento(1) = str2double( string( current_patient(4) ) );
+    fecha_nacimiento(2) = str2double( string( current_patient(5) ) );
+    fecha_nacimiento(3) = str2double( string( current_patient(6) ) );
     
-    altura = current_pacient(7);
-    peso = current_pacient(8);
+    altura = str2double( string( current_patient(7) ) );
+    peso = str2double( string( current_patient(8) ) );
+    %   Se da un formato especifico a cada campo del i-esimo paciente.
     
     current_hp = CreateHealthProfile(nombre, apellido, genero, fecha_nacimiento, altura, peso);
+    %   Se crea la estructura con los datos formateados del i-esimo
+    %   paciente.
     
+    [edad, fmc, imc] = HealthIndexes(current_hp);
+    %   Se calculan los indices de salud para el i-esimo paciente.
+    
+    edades(i - 1) = edad;
 end
