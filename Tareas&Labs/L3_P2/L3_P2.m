@@ -6,7 +6,7 @@ load('Lista.mat');
 
 %%  Generar HealthProfiles
 
-edades = zeros(1, length(data));
+edades = zeros(1, length(data) - 1);
 %   vector de edades de los pacientes.
 
 for i = 2:length(data)
