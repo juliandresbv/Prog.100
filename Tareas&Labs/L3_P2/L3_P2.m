@@ -1,6 +1,8 @@
 %%  Carga Lista.mat
 
 load('Lista.mat');
+%   Guarda la informacion de pacientes como una matriz de celdas llamada
+%   "data".
 
 %%  Generar HealthProfiles
 
@@ -31,4 +33,5 @@ for i = 2:length(data)
     %   Se calculan los indices de salud para el i-esimo paciente.
     
     edades(i - 1) = edad;
+    %   Se ingresan las edades en el vector de edades.
 end
