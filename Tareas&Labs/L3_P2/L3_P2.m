@@ -34,4 +34,6 @@ for i = 2:length(data)
     
     edades(i - 1) = edad;
     %   Se ingresan las edades en el vector de edades.
+    
+    [min, max, mean] = MinMaxMean(edades);
 end
