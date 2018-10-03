@@ -4,7 +4,7 @@ function [cos] = cosx_taylor_series(x, n)
     format long g;
     
     cos = 1;
-    if (n > 0)
-        cos = ( ( (-1)^n)*(x^(2*n) ) )/( factorial(2*n) ) + cosx_taylor_series(x, n-1);
+    if ( n > 0 )
+        cos = ( ( ( (-1)^n ) * ( x^(2*n) ) ) / ( factorial(2*n) ) ) + cosx_taylor_series(x, n - 1);
     end
 end
