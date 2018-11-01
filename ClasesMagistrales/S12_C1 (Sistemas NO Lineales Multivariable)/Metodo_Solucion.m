@@ -29,10 +29,10 @@ while (1)
     
     b = zeros(2, 1);
     
-    dx = J \ b;
-    
     b(1) = -f1(x1i, x2i);
     b(2) = -f2(x1i, x2i);
+    
+    dx = J \ b;
     
     x1sig = x1i + dx(1);
     x2sig = x2i + dx(2);
